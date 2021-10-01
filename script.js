@@ -3,15 +3,7 @@ const counter = document.querySelector("#number-of-students");
 const generate = document.querySelector("#generate");
 const list = document.querySelector("#list");
 
-const id,
-      name_,
-      gender,
-      math,
-      physics,
-      chemistry,
-      history_,
-      english,
-      average;
+let id, name_, gender, math, physics, chemistry, history_, english, average;
 const records = [];
 const getSlider = () => {
   counter.innerHTML = slider.value;
@@ -31,8 +23,14 @@ generate.onclick = () => {
         names.surnames[Math.floor(Math.random() * 300)]
       }`;
     }
+    math = Math.floor(Math.random() * 100);
+    physics = Math.floor(Math.random() * 100);
+    chemistry = Math.floor(Math.random() * 100);
+    history_ = Math.floor(Math.random() * 100);
+    english = Math.floor(Math.random() * 100);
+    average = (math + physics + chemistry + history_ + english) / 5;
     records.push([
-      id,
+      // id,
       name_,
       gender,
       math,
@@ -44,7 +42,7 @@ generate.onclick = () => {
     ]);
   }
 };
-
+// console.log(records);
 // const id = document.querySelector(".id");
 // const name_ = document.querySelector(".name");
 // const gender = document.querySelector(".gender");
