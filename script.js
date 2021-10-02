@@ -1,18 +1,20 @@
 const slider = document.querySelector("#slider");
 const counter = document.querySelector("#number-of-students");
 const generate = document.querySelector("#generate");
-const students = document.querySelector("#students");
+const studentsRef = document.querySelector("#students");
+const totalAverageRef = document.querySelector("#total-average");
 
 let id, name_, gender, math, physics, chemistry, history_, english, average;
-const records = [];
-let sum = 0;
-const totalAverage;
 const getSlider = () => {
   counter.innerHTML = slider.value;
 };
 const students = (slider.oninput = getSlider);
 
 generate.onclick = () => {
+  let records = [];
+  let sum = 0;
+  let totalAverage = 0;
+  studentsRef.innerHTML = ``;
   for (let i = 0; i < slider.value; i++) {
     if (Math.floor(Math.random() * 2) == 0) {
       gender = "male";
@@ -43,8 +45,21 @@ generate.onclick = () => {
       english,
       average,
     ]);
+    studentsRef.innerHTML += `<tr>
+  <td class="id">${id}</td>
+  <td class="name">${name_}</td>
+  <td class="gender">${gender}</td>
+  <td class="math">${math}</td>
+  <td class="physics">${physics}</td>
+  <td class="chemistry">${chemistry}</td>
+  <td class="history">${history_}</td>
+  <td class="english">${english}</td>
+  <td class="average">${average}</td>
+</tr>`;
   }
   totalAverage = sum / records.length;
+  console.log(records.length);
+  totalAverageRef.innerHTML = `Total Average = ${totalAverage}`;
 };
 // console.log(records);
 // const id = document.querySelector(".id");
