@@ -5,6 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Grades</title>
+    <script src="names.js" defer></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body></body>
+  <body>
+    <h1>Number of Students : <span id="number-of-students">1</span></h1>
+    <div id="slider-box"><input id="slider" type="range" min="1" max="200" value="1"></input>
+    <button name="Generate" id="generate">Generate</button></div>
+    <h1 id="grades">Grades</h1>
+    <h1 id="total-average">Total Average = 0</h1>
+    <ul>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>Math</th>
+          <th>Physics</th>
+          <th>Chemistry</th>
+          <th>History</th>
+          <th>English</th>
+          <th>Average</th>
+        </tr>
+      </thead>
+      <tbody id="students">
+        <!-- <tr>
+          <td class="id"></td>
+          <td class="name"></td>
+          <td class="gender"></td>
+          <td class="math"></td>
+          <td class="physics"></td>
+          <td class="chemistry"></td>
+          <td class="history"></td>
+          <td class="english"></td>
+          <td class="average"></td>
+        </tr> -->
+      </tbody>
+    </table>
+  </body>
 </html>
